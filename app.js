@@ -1,12 +1,13 @@
 alert('Boas vindas ao jogo do número secreto!');
 
-let numeroSecreto = 28;
+let numeroMaximo = 2000;
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1 );
 let numeroDigitado;
 let tentativas = 1;
 
 
 while (numeroDigitado != numeroSecreto) {
-    numeroDigitado = prompt('Escolha um número entre 1 e 30');
+    numeroDigitado = prompt('Escolha um número entre 1 e ' + numeroMaximo);
 
     if (numeroSecreto == numeroDigitado) {
         break;
@@ -21,9 +22,15 @@ while (numeroDigitado != numeroSecreto) {
         tentativas++ //contando o número de tentativas a certa e a errada
     }
 }
+
+let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+alert(`Você acertou o número secreto ${numeroSecreto} com ${tentativas} ${palavraTentativa}`);
+
+
+/*
 if (tentativas > 1) {
     alert(`Você acertou o número secreto ${numeroSecreto} com ${tentativas} tentativas`);
 } else {
     alert(`Você acertou o número secreto ${numeroSecreto} com ${tentativas} tentativa`);
-}
+}*/
 
